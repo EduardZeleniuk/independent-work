@@ -70,20 +70,20 @@
 		
 				<thead>
 					<tr>
-						<?php foreach ($tableKeys as $value): ?>
-							<th><?=$value?></th>
+						<?php foreach ($tableKeys as $valueKey): ?>
+							<th><?=$valueKey?></th>
 						<?php endforeach ?>
 					</tr>
 				</thead>						
 				<tbody>
-					<?php foreach ($table as $value): ?>
-						<tr>
-								<td><?=$value['id']?></td>
-								<td><?=$value['name']?></td>
-								<td><?=$value['age']?></td>
-								<td><?=$value['salary']?></td>
-						</tr>
-					<?php endforeach ?>
+					
+						<?php foreach ($table as $value): ?>
+							<tr>
+								<?php foreach ($tableKeys as $valueKey): ?>
+									<td><?=$value[$valueKey]?></td>
+								<?php endforeach ?>
+							</tr>
+						<?php endforeach ?>	
 				</tbody>
 	
 	</table>
