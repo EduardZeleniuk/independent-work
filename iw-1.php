@@ -40,6 +40,34 @@
 	);
 
 	$tableKeys = array_keys($table[0]);
+
+
+
+	$data = 'id:name:age
+1:Ваня:8
+2:Коля:10
+3:Саша:5';
+
+
+$strings = explode("\n", $data);
+$keys = explode(":", array_shift($strings));
+$row = [];
+$result = [];
+
+foreach($strings as $string){
+
+	$lines = explode(":", $string);
+
+	foreach($lines as $i => $line){
+
+		$row[$keys[$i]] = $line;
+
+	}
+	
+	$result[] = $row;
+}
+var_dump($result);
+
 ?>
 
 <!DOCTYPE html>
